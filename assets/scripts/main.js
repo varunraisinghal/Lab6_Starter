@@ -45,6 +45,7 @@ function addRecipesToDocument(recipes) {
   for (const recipe of recipes)
   {
     document.createElement('recipe-card');
+    RecipeCard.data = {}
   }
 }
 
