@@ -130,20 +130,20 @@ class RecipeCard extends HTMLElement {
     //           literals (tempalte strings) and element.innerHTML for this.
     shadowArticle.innerHTML =    
     `
-    <img src="  "
-    alt="${data[imgAlt]}">
+    <img src=${data.imgSrc}
+    alt=${data.imgAlt}>
   <p class="title">
-    <a href="${data[titleLnk]}">${data[titleTxt]}</a>
-  </p>
-  <p class="organization">${data[organization]}</p>
+    <a href=${data.titleLnk}>${data.titleTxt}</a>
+  </p>  
+  <p class="organization">${data.organization}</p>
   <div class="rating">
-    <span>${data[rating]}</span>
-    <img src="${data[imgSrc]}" alt="${data[imgAlt]}">
-    <span>(500)</span>
+    <span>${data.rating}</span>
+    <img src="/assets/images/icons/${data.rating}-star.svg" alt=${data.rating}>
+    <span>${data.numRatings}</span>
   </div>
-  <time>${data[lengthTime]}</time>
+  <time>${data.lengthTime}</time>
   <p class="ingredients">
-    ${data[ingredients]}
+    ${data.titleTxt}
   </p>`;
 
   }
