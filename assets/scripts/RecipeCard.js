@@ -119,32 +119,31 @@ class RecipeCard extends HTMLElement {
    */
   set data(data) {
     // If nothing was passed in, return
-    console.log("hi");
-    console.log(data);
     if (!data) return;
 
-
     // A6. TODO - Select the <article> we added to the Shadow DOM in the constructor
-    const shadowArticle = elem.shadowRoot.querySelector('article');
+    const shadowArticle = this.shadowRoot.querySelector('article');
+
     // A7. TODO - Set the contents of the <article> with the <article> template given in
     //           cardTemplate.html and the data passed in (You should only have one <article>,
     //           do not nest an <article> inside another <article>). You should use Template
     //           literals (tempalte strings) and element.innerHTML for this.
-    shadowArticle.innerHTML =     `
-    <img src="https://-to-article.com/recipe-thumbnail.jpg"
-    alt="Recipe Title">
+    shadowArticle.innerHTML =    
+    `
+    <img src="  "
+    alt="${data[imgAlt]}">
   <p class="title">
-    <a href="https://link-to-article.com">Title</a>
+    <a href="${data[titleLnk]}">${data[titleTxt]}</a>
   </p>
-  <p class="organization">The Chef's Organization</p>
+  <p class="organization">${data[organization]}</p>
   <div class="rating">
-    <span>5</span>
-    <img src="/assets/images/icons/5-star.svg" alt="5 stars">
+    <span>${data[rating]}</span>
+    <img src="${data[imgSrc]}" alt="${data[imgAlt]}">
     <span>(500)</span>
   </div>
-  <time>50 min</time>
+  <time>${data[lengthTime]}</time>
   <p class="ingredients">
-    Comma, Separated, List, of, Ingredients
+    ${data[ingredients]}
   </p>`;
 
   }
