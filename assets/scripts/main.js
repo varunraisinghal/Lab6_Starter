@@ -25,7 +25,6 @@ function getRecipesFromStorage()
   // A9. TODO - Complete the functionality as described in this function
   //           header. It is possible in only a single line, but should
   //           be no more than a few lines.
-  //console.log(localStorage.getItem('recipes'));
   if (localStorage.recipes === undefined)
   {
     return [];
@@ -92,7 +91,6 @@ function initFormHandler() {
   let formElement = document.querySelector('form');
   let submitButton = document.querySelectorAll('button[type=submit]')[0];
   let mainElement = document.querySelector('main');
-  console.log(submitButton);
   
   // B3. TODO - Add an event listener for the 'submit' event, which fires when the
   //            submit button is clicked
@@ -100,7 +98,6 @@ function initFormHandler() {
   {
       // B4. TODO - Create a new FormData object from the <form> element reference above
     const formData = new FormData(formElement);
-    console.log(formData);
 
     // B5. TODO - Create an empty object (I'll refer to this object as recipeObject to
     //            make this easier to read), and then extract the keys and corresponding
@@ -112,7 +109,6 @@ function initFormHandler() {
     for (const pair of formData.entries())
     {
       recipeObject[`${pair[0]}`] =  `${pair[1]}`;
-      console.log(recipeObject);
     }
 
     // B7. TODO - Add the recipeObject data to <recipe-card> using element.data
